@@ -1,0 +1,446 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Colleges</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto bg-white p-8 rounded-lg shadow-xl">
+        <h1 id="filterHeading" class="text-3xl font-semibold mb-6 text-center text-blue-700">Filter Colleges</h1>
+
+        <form action="college_data.html" method="GET" class="mb-8">
+            <input type="hidden" name="course" id="course" value="">
+
+            <div class="mb-4">
+                <label for="state" class="block text-gray-700 text-sm font-bold mb-2">Select State:</label>
+                <select id="state" name="state" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">-- Select State --</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                   
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">College Type:</label>
+                <div class="flex items-center space-x-4">
+                    <input type="radio" id="government" name="type" value="government" class="form-radio">
+                    <label for="government" class="text-gray-700">Government</label>
+
+                    <input type="radio" id="private" name="type" value="private" class="form-radio">
+                    <label for="private" class="text-gray-700">Private</label>
+                </div>
+            </div>
+
+           
+
+           
+
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Find Colleges</button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <a href="main.html" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go Back to Courses</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedCourse = urlParams.get('course');
+            const filterHeading = document.getElementById('filterHeading');
+            const courseInput = document.getElementById('course');
+            const specializationFilter = document.getElementById('specializationFilter');
+            const cityFilter = document.getElementById('cityFilter');
+
+            if (selectedCourse) {
+                const formattedCourse = selectedCourse.toUpperCase();
+                filterHeading.textContent = `Filter ${formattedCourse} Colleges`;
+                courseInput.value = selectedCourse;
+
+                // Adjust filters based on the course
+                if (selectedCourse === 'mbbs') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any MBBS specific filters here if needed
+                } else if (selectedCourse === 'llb') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any LLB specific filters here (e.g., specialization in law)
+                } else if (selectedCourse === 'bba') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any BBA specific filters
+                } else if (selectedCourse === 'integrated_law') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any Integrated Law specific filters
+                } else if (selectedCourse === 'bpharm') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any B.Pharm specific filters
+                } else if (selectedCourse === 'btech') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'block';
+                    }
+                    // Ensure B.Tech specific filters are visible
+                } else {
+                    // Default to showing all basic filters if the course is not recognized
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none'; // Or 'block' based on your default preference
+                    }
+                }
+            } else {
+                filterHeading.textContent = 'Filter Colleges'; // Default heading if no course is selected
+            }
+        });
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Ideal College!</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fbc2eb, #a6c0ee);
+            background-image: url(bg1.jpg);
+            background-repeat: no-repeat; /* Prevent tiling */
+        background-position: center; /* Center the image */
+        background-size:cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            font-family: 'Nunito', sans-serif;
+            overflow: hidden; /* To contain background animations */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            /* backdrop-filter: blur(5px); */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative; /* For image positioning */
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #filterHeading {
+            color: #7c3aed;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+            font-size: 2.25rem;
+            text-align: center;
+            position: relative; /* For heading animation */
+        }
+
+        /* Subtle pulse animation for the heading */
+        #filterHeading::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            height: 90%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0;
+            animation: pulseBg 2s infinite alternate;
+        }
+
+        @keyframes pulseBg {
+            0% {
+                opacity: 0.1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+
+        label {
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        select.shadow,
+        input[type="text"].shadow {
+            border: 1px solid #e0e6ed;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        select.shadow:focus,
+        input[type="text"].shadow:focus {
+            outline: none;
+            border-color: #a78bfa;
+            box-shadow: 0 0 0 0.2rem rgba(167, 139, 250, 0.25);
+        }
+
+        .form-radio {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1.5px solid #cbd5e0;
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+        }
+
+        .form-radio:checked {
+            background-color: #7c3aed;
+            border-color: #7c3aed;
+        }
+
+        .form-radio:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.25);
+        }
+
+        .form-radio:hover {
+            transform: scale(1.1);
+        }
+
+        button[type="submit"],
+        .go-back-button {
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            position: relative; /* For icon animation */
+            overflow: hidden; /* Clip the ripple effect */
+        }
+
+        button[type="submit"] {
+            background-color: #6366f1;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+        }
+
+        button[type="submit"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.5);
+        }
+
+        .go-back-button {
+            background-color: #9ca3af;
+        }
+
+        .go-back-button:hover {
+            background-color: #6b7280;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+        }
+
+        .go-back-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(156, 163, 175, 0.5);
+        }
+
+        .flex-items-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .space-x-4 > * + * {
+            margin-left: 1rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mt-6 {
+            margin-top: 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Animated college background image */
+        .college-bg-animate {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('college-study.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Subtle overlay */
+            z-index: -1;
+            animation: pan 10s infinite alternate;
+        }
+
+        @keyframes pan {
+            0% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Subtle hover animation for labels */
+        label {
+            transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
+        }
+
+        label:hover {
+            color: #6366f1;
+            transform: scale(1.02);
+        }
+
+        /* Subtle animation for select and input */
+        select.shadow,
+        input[type="text"].shadow {
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+        }
+
+        select.shadow:hover,
+        input[type="text"].shadow:hover {
+            transform: scale(1.01);
+        }
+    </style>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> -->
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="college-bg-animate"></div>
+    <div class="container mx-auto bg-white p-8 rounded-lg shadow-xl relative">
+        <h1 id="filterHeading" class="text-3xl font-semibold mb-6 text-center text-blue-700">Filter Colleges</h1>
+
+        <form action="college_data.html" method="GET" class="mb-8">
+            <input type="hidden" name="course" id="course" value="">
+
+            <div class="mb-4">
+                <label for="state" class="block text-gray-700 text-sm font-bold mb-2">Select State:</label>
+                <select id="state" name="state" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">-- Select State --</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Karnataka">Karnataka</Karnataka></option>
+                    <option value="Maharashtra">Maharashtra</option>
+
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">College Type:</label>
+                <div class="flex items-center space-x-4">
+                    <input type="radio" id="government" name="type" value="government" class="form-radio">
+                    <label for="government" class="text-gray-700">Government</label>
+
+                    <input type="radio" id="private" name="type" value="private" class="form-radio">
+                    <label for="private" class="text-gray-700">Private</label>
+                </div>
+            </div>
+
+
+
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Find Colleges</button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <a href="main.html" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go Back to Courses</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedCourse = urlParams.get('course');
+            const filterHeading = document.getElementById('filterHeading');
+            const courseInput = document.getElementById('course');
+            const specializationFilter = document.getElementById('specializationFilter');
+            const cityFilter = document.getElementById('cityFilter');
+
+            if (selectedCourse) {
+                const formattedCourse = selectedCourse.toUpperCase();
+                filterHeading.textContent = `Filter ${formattedCourse} Colleges`;
+                courseInput.value = selectedCourse;
+
+                // Adjust filters based on the course
+                if (selectedCourse === 'mbbs') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any MBBS specific filters here if needed
+                } else if (selectedCourse === 'llb') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any LLB specific filters here (e.g., specialization in law)
+                } else if (selectedCourse === 'bba') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any BBA specific filters
+                } else if (selectedCourse === 'integrated_law') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any Integrated Law specific filters
+                } else if (selectedCourse === 'bpharm') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none';
+                    }
+                    // Add any B.Pharm specific filters
+                } else if (selectedCourse === 'btech') {
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'block';
+                    }
+                    // Ensure B.Tech specific filters are visible
+                } else {
+                    // Default to showing all basic filters if the course is not recognized
+                    if (specializationFilter) {
+                        specializationFilter.style.display = 'none'; // Or 'block' based on your default preference
+                    }
+                }
+            } else {
+                filterHeading.textContent = 'Filter Colleges'; // Default heading if no course is selected
+            }
+        });
+    </script>
+</body>
+</html>

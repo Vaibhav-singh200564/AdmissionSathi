@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top MBA/PGDM Colleges in India - Your Path to Leadership</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #83aae4, #044299);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: #3498db;
+            color: white;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .college-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .college-card {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .college-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .college-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+        }
+
+        .college-card p {
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .college-card strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .college-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.8rem;
+        }
+
+        .college-card ul li {
+            color: #777;
+            margin-bottom: 0.3rem;
+        }
+
+        .college-card .apply-button {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 0.3rem;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .college-card .apply-button:hover {
+            background-color: #219653;
+        }
+
+        .important-info {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .important-info h2 {
+            color: #e67e22;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 0.5rem;
+        }
+
+        .important-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .important-info ul li {
+            color: #555;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .important-info ul li strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .faq-section {
+            margin-bottom: 2rem;
+        }
+
+        .faq-section h2 {
+            color: #9b59b6;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.3rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 0.8rem 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem;
+            background-color: #fff;
+            color: #555;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+
+        .faq-answer.active {
+            max-height: 200px; /* Adjust as needed */
+            padding: 0.8rem 1.2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 0 0 0.5rem 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Discover the Best MBA/PGDM Colleges in India</h1>
+            <p>Unlock your leadership potential with a top-ranked management program.</p>
+        </div>
+
+        <section class="college-list">
+            <div class="college-card">
+                <h3>Indian Institute of Management (IIM) Bangalore</h3>
+                <p><strong>Location:</strong> Bangalore</p>
+                <p><strong>Accreditation:</strong> AACSB, EQUIS</p>
+                <ul>
+                    <li>Highly ranked consistently.</li>
+                    <li>Excellent faculty and alumni network.</li>
+                    <li>Diverse range of specializations.</li>
+                </ul>
+                <a href="https://www.iimb.ac.in/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+
+            <div class="college-card">
+                <h3>Indian Institute of Management (IIM) Ahmedabad</h3>
+                <p><strong>Location:</strong> Ahmedabad</p>
+                <p><strong>Accreditation:</strong> AACSB, EQUIS</p>
+                <ul>
+                    <li>One of the oldest and most prestigious B-schools.</li>
+                    <li>Strong focus on case-based learning.</li>
+                    <li>Globally recognized programs.</li>
+                </ul>
+                <a href="https://www.iima.ac.in/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+
+            <div class="college-card">
+                <h3>Indian Institute of Management (IIM) Calcutta</h3>
+                <p><strong>Location:</strong> Kolkata</p>
+                <p><strong>Accreditation:</strong> AACSB, EQUIS</p>
+                <ul>
+                    <li>Pioneering management education in India.</li>
+                    <li>Renowned for its finance and strategy programs.</li>
+                    <li>Vibrant campus culture.</li>
+                </ul>
+                <a href="https://www.iimcal.ac.in/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+
+            <div class="college-card">
+                <h3>Indian School of Business (ISB)</h3>
+                <p><strong>Location:</strong> Hyderabad & Mohali</p>
+                <p><strong>Accreditation:</strong> AACSB</p>
+                <ul>
+                    <li>Internationally recognized with global curriculum.</li>
+                    <li>Experienced faculty with industry connections.</li>
+                    <li>Strong focus on leadership development.</li>
+                </ul>
+                <a href="https://www.isb.edu/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+
+            <div class="college-card">
+                <h3>XLRI - Xavier School of Management</h3>
+                <p><strong>Location:</strong> Jamshedpur</p>
+                <p><strong>Accreditation:</strong> AACSB</p>
+                <ul>
+                    <li>Esteemed for its ethical and value-based education.</li>
+                    <li>Strong programs in HR and Business Management.</li>
+                    <li>Long-standing reputation for excellence.</li>
+                </ul>
+                <a href="https://xlri.ac.in/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+
+            <div class="college-card">
+                <h3>Faculty of Management Studies (FMS), University of Delhi</h3>
+                <p><strong>Location:</strong> Delhi</p>
+                <p><strong>Accreditation:</strong> AICTE</p>
+                <ul>
+                    <li>Affordable and high-quality MBA program.</li>
+                    <li>Located in the heart of Delhi with strong industry interface.</li>
+                    <li>Competitive admission process.</li>
+                </ul>
+                <a href="https://www.fms.edu/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+
+            <div class="college-card">
+                <h3>Indian Institute of Management (IIM) Lucknow</h3>
+                <p><strong>Location:</strong> Lucknow</p>
+                <p><strong>Accreditation:</strong> AACSB</p>
+                <ul>
+                    <li>Known for its strong academic rigor and industry focus.</li>
+                    <li>Offers diverse programs including agri-business management.</li>
+                    <li>Well-established placement record.</li>
+                </ul>
+                <a href="https://www.iiml.ac.in/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+
+            <div class="college-card">
+                <h3>National Institute of Industrial Engineering (NITIE), Mumbai</h3>
+                <p><strong>Location:</strong> Mumbai</p>
+                <p><strong>Accreditation:</strong> AICTE</p>
+                <ul>
+                    <li>Specialized in industrial engineering and management.</li>
+                    <li>Excellent placement opportunities in manufacturing and consulting.</li>
+                    <li>Focus on operations and supply chain.</li>
+                </ul>
+                <a href="https://www.nitie.ac.in/" target="_blank" class="apply-button">Explore Programs</a>
+            </div>
+        </section>
+
+        <section class="important-info">
+            <h2>Key Factors to Consider When Choosing a B-School</h2>
+            <ul>
+                <li><strong>Accreditation:</strong> Look for recognized accreditations like AACSB, EQUIS, and NBA.</li>
+                <li><strong>Ranking & Reputation:</strong> Consider national and international rankings and the overall reputation of the institute.</li>
+                <li><strong>Faculty:</strong> Research the qualifications and experience of the faculty members.</li>
+                <li><strong>Curriculum & Specializations:</strong> Ensure the program offers specializations aligned with your career goals.</li>
+                <li><strong>Placement Record:</strong> Review the institute's placement statistics and the companies that recruit from the campus.</li>
+                <li><strong>Location & Infrastructure:</strong> Consider the location's industry connect and the quality of campus infrastructure.</li>
+                <li><strong>Alumni Network:</strong> A strong alumni network can be invaluable for career progression.</li>
+                <li><strong>Fees & Financial Aid:</strong> Understand the program fees and available scholarships or loan options.</li>
+            </ul>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What are the common entrance exams for MBA/PGDM in India?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Common entrance exams include CAT, XAT, SNAP, NMAT, CMAT, and state-level CETs. Some colleges also accept GMAT scores.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What is the typical duration of an MBA/PGDM program in India?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    The most common duration is two years, but some institutes also offer one-year executive MBA programs or specialized PGDM programs of varying lengths.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How important is work experience for an MBA/PGDM?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Work experience is often preferred, especially for full-time MBA programs at top-tier institutes. However, some programs also admit fresh graduates based on their academic record and entrance exam scores.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What are some popular MBA specializations?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Popular specializations include Marketing, Finance, Human Resources, Operations Management, Information Technology, and Strategy.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Top MBA Colleges India | Your Guide to Management Education</p>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentNode;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+
+            answer.classList.toggle('active');
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

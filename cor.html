@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carousel 50vh</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100vw;
+      height: 50vh;
+      overflow: hidden;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel-images img {
+      width: 100vw;
+      height: 50vh;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .prev { left: 20px; }
+    .next { right: 20px; }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .overlay-text h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .overlay-text button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .overlay-text button:hover {
+      background-color: #e65c00;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-text h3 {
+        font-size: 1.5rem;
+      }
+
+      .overlay-text button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="carousel-images" id="carouselImages">
+    <img src="pexels-ekrulila-2292837.jpg" alt="Image 1"/>
+    <img src="pexels-rdne-7683745.jpg" alt="Image 2"/>
+    <img src="pexels-theshantanukr-16504590.jpg" alt="Image 3"/>
+  </div>
+  <div class="overlay-text">
+    <h3>Book Free Counselling Session Now.</h3>
+    <button>Book Now</button>
+  </div>
+  <button class="nav-button prev" onclick="moveSlide(-1)">❮</button>
+  <button class="nav-button next" onclick="moveSlide(1)">❯</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const images = document.getElementById("carouselImages");
+  const totalImages = images.children.length;
+
+  function moveSlide(direction) {
+    currentIndex = (currentIndex + direction + totalImages) % totalImages;
+    images.style.transform = `translateX(-${currentIndex * window.innerWidth}px)`;
+  }
+
+  // Auto-slide every 2 seconds
+  setInterval(() => {
+    moveSlide(1);
+  }, 2000);
+
+  // Adjust transform on resize
+  window.addEventListener('resize', () => {
+    images.style.transform = `translateX(-${currentIndex * window.innerWidth}px)`;
+  });
+</script>
+
+</body>
+</html>

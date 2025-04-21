@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best B.Tech Colleges</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .college-list {
+            margin-top: 20px;
+        }
+        .college-card {
+            background-color: white;
+            padding: 4px;
+            border-radius: 0.375rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .view-details-btn {
+            color: green;
+            text-decoration: underline;
+            cursor: pointer;
+            display: block;
+            margin-top: 0.5em;
+        }
+        .view-details-btn:hover {
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto bg-white p-8 rounded-lg shadow-xl">
+        <h1 class="text-3xl font-semibold mb-6 text-center text-blue-700">List of Best B.Tech Colleges</h1>
+
+        <div id="collegeList" class="college-list">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Colleges</h2>
+            <p id="noResults" class="text-gray-600 italic hidden">No colleges found matching your criteria.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collegeListDiv = document.getElementById('collegeList');
+            const noResultsMessage = document.getElementById('noResults');
+            collegeListDiv.innerHTML = '<h2 class="text-2xl font-semibold mb-4 text-gray-800">Colleges</h2>';
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedCourse = urlParams.get('course');
+            const selectedType = urlParams.get('type');
+
+            const collegesData = [
+                { name: "Government Engineering College, Anantapur", type: "government", courses: ["Computer Science and Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering"], exams: ["AP EAMCET"] },
+                { name: "JNTUA College of Engineering, Pulivendula", type: "government", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Mechanical Engineering"], exams: ["AP EAMCET"] },
+                { name: "IIT Hyderabad", type: "government", courses: ["Computer Science and Engineering", "Electrical Engineering", "Mechanical Engineering", "Chemical Engineering"], exams: ["JEE Advanced"] },
+                { name: "BITS Pilani, Hyderabad", type: "private", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Chemical Engineering"], exams: ["BITSAT"] },
+                { name: "Vellore Institute of Technology, Vellore", type: "private", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Biotechnology"], exams: ["VITEEE"] },
+                { name: "Anna University, Chennai", type: "government", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Civil Engineering"], exams: ["TNEA"] },
+                { name: "Government College of Engineering, Bangalore", type: "government", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Civil Engineering"], exams: ["KCET"] },
+                { name: "PES University, Bangalore", type: "private", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Mechanical Engineering"], exams: ["KCET", "COMEDK"] },
+                { name: "SRM Institute of Science and Technology, Chennai", type: "private", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Civil Engineering", "Biotechnology"], exams: ["SRMJEEE"] },
+                { name: "Osmania University, Hyderabad", type: "government", courses: ["Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Civil Engineering"], exams: ["TS EAMCET"] },
+            ];
+
+            const filteredColleges = collegesData.filter(college => {
+                const courseMatch = !selectedCourse || college.courses.includes(selectedCourse);
+                const typeMatch = !selectedType || college.type === selectedType;
+                return courseMatch && typeMatch;
+            });
+
+            if (filteredColleges.length > 0) {
+                noResultsMessage.classList.add('hidden');
+                filteredColleges.forEach(college => {
+                    const collegeCard = document.createElement('div');
+                    collegeCard.classList.add('college-card');
+                    collegeCard.innerHTML = `
+                        <h4 class="text-xl font-semibold text-blue-600">${college.name}</h4>
+                        <p>Type: ${college.type.charAt(0).toUpperCase() + college.type.slice(1)}</p>
+                        <p>Courses Offered: ${college.courses.join(', ')}</p>
+                        <p>Related Exams: ${college.exams.join(', ')}</p>
+                        <a href="${generateCollegeLink(college.name)}" class="view-details-btn">View Details</a>
+                    `;
+                    collegeListDiv.appendChild(collegeCard);
+                });
+            } else {
+                noResultsMessage.classList.remove('hidden');
+            }
+
+            function generateCollegeLink(collegeName) {
+                const baseName = collegeName.toLowerCase().replace(/[\s,]+/g, '_').replace(/[^a-z0-9_]/g, '');
+                return `${baseName}.html`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<head>
+    <title>AS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a>
+                <img src="AS_logo1.png" alt="Your College Gateway Logo" height="80" width="80">
+            </a>
+        </div>
+        <div class="auth-buttons">
+            <a href="http://localhost/myscripts/index.php">Login</a>
+            <i class="fas fa-bars" id="hamburger-icon" style="font-size: 25px; cursor: pointer; padding-left: 10px;"></i>
+        </div>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div id="dropdown-menu" class="dropdown-menu hidden">
+        <a id="login" href="http://localhost/myscripts/index.php">Login</a>
+        <a href="#latest-news">News</a>
+        <a href="#mockTests">Tests</a>
+        <a href="#con_info">Contact</a>
+    </div>
+    <!-- crousal-->
+    <div class="carousel">
+        <div class="carousel-images" id="carouselImages">
+            <img src="pexels-ekrulila-2292837.jpg" alt="Image 1"/>
+            <img src="pexels-rdne-7683745.jpg" alt="Image 2"/>
+            <img src="pexels-theshantanukr-16504590.jpg" alt="Image 3"/>
+        </div>
+        <div class="overlay-text text-bold">
+            <h3>Dream Big. Start Now.</h3>
+            <h3>Top Experts. Zero Cost. Unlimited Potential.</h3>
+            <a href="http://localhost/myscripts/consultant.php"><button id="button1">Im Ready to Rise </button></a>
+        </div>
+        <div class="floating-buttons">
+            <a href="" class="float-btn blue know-more-trigger know-more-button"> Know More</a>
+            <a href="https://www.youtube.com" class="float-btn red" target="_blank"> YouTube</a>
+            <a href="https://wa.me/917604057878" target="_blank" class="float-btn yellow"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        </div>
+      
+    
+<div class="content-wrapper">
+    <div id="main-content">
+        <h1 class="exp font-bold mb-6" aria-label="Explore Courses">Explore Courses</h1>
+
+        <div class="mb-8">
+            <div class="flex" role="tablist">
+                <button class="tab-button px-6 py-3 rounded-lg border  bg-white text-gray-800  font-semibold" data-tab="UG" role="tab" aria-selected="true">Undergraduate</button>
+                <button class="tab-button px-6 py-3 rounded-lg border bg-white text-gray-800 font-semibold" data-tab="PG" role="tab" aria-selected="false">Postgraduate</button>
+                <button class="tab-button px-6 py-3 rounded-lg border bg-white text-gray-800 font-semibold" data-tab="Diploma" role="tab" aria-selected="false">Diploma</button>
+            </div>
+        </div>
+
+        <div id="UG" class="tab-content overflow-x-auto pb-4 short-scroll" role="tabpanel">
+            <div class="flex space-x-6 min-w-fit whitespace-nowrap">
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">B.Tech / B.E.</h3>
+                    <p>Duration: <strong>4 Years</strong></p>
+                    <p>Related Exams: <strong>JEE Main, BITSAT, CUET etc..</strong></p>
+                    <a href="select_filters.html?course=btech" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">MBBS</h3>
+                    <p>Duration: <strong>5.5 Years</strong></p>
+                    <p>Related Exams: <strong>NEET</strong></p>
+                    <a href="select_filters.html?course=mbbs" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">LLB</h3>
+                    <p>Duration: <strong>3 Years</strong></p>
+                    <p>Related Exams: <strong>CLAT, AILET</strong></p>
+                    <a href="select_filters.html?course=llb" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">BBA / BBM / BBS</h3>
+                    <p>Duration: <strong>3 Years</strong></p>
+                    <p>Related Exams: <strong>DU JAT, NMIMS NPAT</strong></p>
+                    <a href="select_filters.html?course=bba" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">Integrated Law</h3>
+                    <p>Duration: <strong>5 Years</strong></p>
+                    <p>Related Exams: <strong>CLAT, LSAT</strong></p>
+                    <a href="select_filters.html?course=il" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">B.Pharm</h3>
+                    <p>Duration: <strong>4 Years</strong></p>
+                    <p>Related Exams: <strong>GPAT, MHT-CET</strong></p>
+                    <a href="select_filters.html?course=bpharm" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="PG" class="tab-content hidden overflow-x-auto pb-4 short-scroll" role="tabpanel">
+            <div class="flex space-x-6 min-w-fit whitespace-nowrap">
+               
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">M.Tech</h3>
+                    <p>Duration: <strong>2 Years</strong></p>
+                    <p>Related Exams: <strong>GATE, CEED</strong></p>
+                    <a href="select_filters.html?course=mtech" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">MBA</h3>
+                    <p>Duration: <strong>2 Years</strong></p>
+                    <p>Related Exams: <strong>CAT, XAT, MAT</strong></p>
+                    <a href="select_filters.html?course=mba" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">MCA</h3>
+                    <p>Duration: <strong>2-3 Years</strong></p>
+                    <p>Related Exams: <strong>NIMCET, TANCET</strong></p>
+                    <a href="select_filters.html?course=mca" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">M.Sc</h3>
+                    <p>Duration: <strong>2 Years</strong></p>
+                    <p>Related Exams: <strong>CUET PG, IIT JAM</strong></p>
+                    <a href="select_filters.html?course=msc" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">LLM</h3>
+                    <p>Duration: <strong>1-2 Years</strong></p>
+                    <p>Related Exams: <strong>CLAT PG, AILET PG</strong></p>
+                    <a href="select_filters.html?course=llm" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">M.Pharm</h3>
+                    <p>Duration: <strong>2 Years</strong></p>
+                    <p>Related Exams: <strong>GPAT, NIPER JEE</strong></p>
+                    <a href="select_filters.html?course=mpharm" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="Diploma" class="tab-content hidden overflow-x-auto pb-4 short-scroll" role="tabpanel">
+            <div class="flex space-x-6 min-w-fit whitespace-nowrap">
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">Diploma in Engineering</h3>
+                    <p>Duration: <strong>3 Years</strong></p>
+                    <p>Related Exams: <strong>State Polytechnic Entrance</strong></p>
+                    <a href="select_filters.html?course=eng" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">Diploma in Pharmacy</h3>
+                    <p>Duration: <strong>2 Years</strong></p>
+                    <p>Related Exams: <strong>State Pharmacy Entrance</strong></p>
+                    <a href="select_filters.html?course=dpharm" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">Diploma in Fashion Design</h3>
+                    <p>Duration: <strong>1-2 Years</strong></p>
+                    <p>Related Exams: <strong>Institutional Tests</strong></p>
+                    <a href="select_filters.html?course=fd" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">Diploma in Hotel Management</h3>
+                    <p>Duration: <strong>1-2 Years</strong></p>
+                    <p>Related Exams: <strong>NCHM JEE</strong></p>
+                    <a href="select_filters.html?course=hm" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+                <div class="course-card bg-white p-6 rounded-xl shadow-lg min-w-[280px]">
+                    <h3 class="text-2xl font-semibold">Diploma in Graphic Design</h3>
+                    <p>Duration: <strong>1 Years</strong></p>
+                    <p>Related Exams: <strong>Institutional Tests</strong></p>
+                    <a href="select_filters.html?course=gd" class="text-red-600 hover:underline ">View Best Colleges</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="mt-12" id="exam-section" role="region" aria-label="Related Exams">
+            <h2 class="text-3xl font-semibold text-black mb-6">Related Exams</h2>
+            <div class="short-scroll overflow-x-auto pb-4" id="exam-list"></div>
+        </div>
+    </div>
+
+    <div id="overview-section" class="overview-section hidden" role="region" aria-label="Course Overview">
+        <div id="overview-content"></div>
+        <button id="back-to-courses" class="mt-6 px-6 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 transition" role="button" aria-label="Back to Courses">Back to Courses</button>
+    </div>
+</div>
+<!--Test-->
+    <div class="content-wrapper">
+        <div class="button-container">
+            <button id="b1" onclick="showSection('mockTests', this)">Mock Test</button>
+            <button id="b2" onclick="showSection('previousPapers', this)">Previous Year Question Paper</button>
+            <button id="b3" onclick="showSection('samplePapers', this)">Sample Paper</button>
+        </div>
+
+        <div class="card-container" id="mockTests">
+            <div class="test-card">
+                <h3>Neet Online Test 01</h3>
+                <p>45 Questions</p>
+                <p>90 minutes</p>
+                <a class="start-button" href="nt2022.pdf">Start </a>
+            </div>
+            <div class="test-card">
+                <h3>Neet Online Test 02</h3>
+                <p>45 Questions</p>
+                <p>90 minutes</p>
+                <a class="start-button" href="nt2022.pdf">Start </a>
+            </div>
+            <div class="test-card">
+                <h3>Neet Online Test 03</h3>
+                <p>45 Questions</p>
+                <p>90 minutes</p>
+                <a class="start-button" href="nt2022.pdf">Start </a>
+            </div>
+        </div>
+
+        <div class="card-container" id="previousPapers">
+            <div class="test-card">
+                <h3>NEET Previous Year Paper 2024</h3>
+                <p>Full Paper</p>
+                <p>180 Questions</p>
+                <a class="start-button" href="nt2022.pdf">View </a>
+            </div>
+            <div class="test-card">
+                <h3>NEET Previous Year Paper 2023</h3>
+                <p>Full Paper</p>
+                <p>180 Questions</p>
+                <a class="start-button" href="nt2022.pdf">View </a>
+            </div>
+            <div class="test-card">
+                <h3>NEET Previous Year Paper 2022</h3>
+                <p>Full Paper</p>
+                <p>180 Questions</p>
+                <a class="start-button" href="nt2022.pdf">View </a>
+            </div>
+        </div>
+        <div class="card-container" id="samplePapers">
+            <div class="test-card">
+                <h3>NEET Sample Paper Set 01</h3>
+                <p>45 Questions</p>
+                <p>90 minutes</p>
+                <a class="start-button" href="nt2022.pdf">View </a>
+            </div>
+            <div class="test-card">
+                <h3>NEET Sample Paper Set 02</h3>
+                <p>45 Questions</p>
+                <p>90 minutes</p>
+                <a class="start-button" href="nt2022.pdf">View </a>
+            </div>
+            <div class="test-card">
+                <h3>NEET Sample Paper Set 03</h3>
+                <p>45 Questions</p>
+                <p>90 minutes</p>
+                <a class="start-button" href="nt2022.pdf">View </a>
+            </div>
+        </div>
+        
+        <!-- article-->
+        <div style="padding: 20px;">
+            <h2 class="latest-articles-heading" id="latest-news">Latest Articles</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px;">
+                <div class="latest-article-item">
+                    
+                    <h4 class="latest-article-title font-bold">Top GATE Participating College...</h4>
+                    <p style="font-size: 0.9em; color: #333; margin-bottom: 5px;">GATE Score is accepted by IITs, NITs, IIITs, and GFTIs...</p>
+                    <div class="latest-article-author">By - Avantika Bhardwaj</div>
+                    <div class="latest-article-info">15th February, 2025, 4 min read</div>
+                    <a href="https://www2.deloitte.com/us/en/insights/industry/public-sector/2025-us-higher-education-trends.html" class="latest-article-read-more">Read More </a>
+                </div>
+                <div class="latest-article-item">
+                    <h4 class="latest-article-title font-bold">Chandigarh University Uttar Pradesh Leads...</h4>
+                    <p style="font-size: 0.9em; color: #333; margin-bottom: 5px;">Chandigarh University Uttar Pradesh is backing...</p>
+                    <div class="latest-article-author">By - Anubhuti</div>
+                    <div class="latest-article-info">15th February, 2025, 4 min read</div>
+                    <a href="https://www.quadc.io/features-ai-tutor" class="latest-article-read-more">Read More </a>
+                </div>
+                <div class="latest-article-item">
+                    <h4 class="latest-article-title font-bold">GATE 2025 Exam Paper Analysis: Exa...</h4>
+                    <p style="font-size: 0.9em; color: #333; margin-bottom: 5px;">Check out a detailed GATE analysis here: Candidates...</p>
+                    <div class="latest-article-author">By - Tushar</div>
+                    <div class="latest-article-info">14th February, 2025, 4 min read</div>
+                    <a href="https://www.mitrmedia.com/resources/blogs/top-higher-education-trends-to-watch-in-2025-innovation-accessibility-and-inclusion/" class="latest-article-read-more">Read More </a>
+                </div>
+                <div class="latest-article-item">
+                    <h4 class="latest-article-title font-bold">TS ICET Result 2025: How to Calculate Yo...</h4>
+                    <p style="font-size: 0.9em; color: #333; margin-bottom: 5px;">The TSCHE will officially declare the results for the...</p>
+                    <div class="latest-article-author">By - Krithyala Jamir</div>
+                    <div class="latest-article-info">14th February, 2025, 3 min read</div>
+                    <a href="https://www.hurix.com/blogs/best-innovations-in-teaching-and-learning-methods-in-and-beyond/" class="latest-article-read-more">Read More </a>
+                </div>
+                <div class="latest-article-item">
+                    <h4 class="latest-article-title font-bold ">CBSE Class 10 Board English Exam...</h4>
+                    <p style="font-size: 1em; color: #333; margin-bottom: 5px;">The CBSE Class 10 English Board Exam is scheduled...</p>
+                    <div class="latest-article-author">By - Akansha</div>
+                    <div class="latest-article-info">14th February, 2025, 2 min read</div>
+                    <a href="https://www.digitallearninginstitute.com/blog/education-technology-trends-to-watch-in-2025" class="latest-article-read-more">Read More </a>
+                </div>
+                
+    </div>
+
+    <div style="padding: 20px; margin-top: 30px;">
+        <h2>Popular Searches</h2>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 10px;">
+          <div style="flex: 1; margin-right: 5%; min-width: 200px;">
+            <h3>Popular Colleges/Universities</h3>
+            <ul class="search" style="list-style: none; padding: 0;">
+              <li><a href="https://www.lpu.in/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">LPU (Lovely Professional University), Jalandhar</a></li>
+              <li><a href="https://www.amity.edu/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Amity University, Noida</a></li>
+              <li><a href="https://www.cuchd.in/"style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Chandigarh University (CU), Chandigarh</a></li>
+              <li><a href="https://www.iimb.ac.in/"style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Indian Institute of Management (IIM), Bangalore</a></li>
+              <li><a href="https://home.iitd.ac.in/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Indian Institute of Technology, Delhi</a></li>
+              <li><a href="https://sunstone.in/campuses/ajeenkya-dy-patil-university"style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Ajeenkya DY Patil University Powered by Sunstone</a></li>
+            </ul>
+          </div>
+          <div style="flex: 1; margin-right: 5%; min-width: 200px;">
+            <h3>Top Colleges by Courses</h3>
+            <ul class="search" style="list-style: none; padding: 0;">
+              <li><a href="webpage1.html" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Top Engineering Colleges in India</a></li>
+              <li><a href="webpage2.html"style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Top MBA/PGDM Colleges in India</a></li>
+              <li><a href="webpage3.html" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Top MCA Colleges in India</a></li>
+              <li><a href="webpage4.html" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Top BCA Colleges in India</a></li>
+              <li><a href="webpage5.html" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Top BBA Colleges in India</a></li>
+              <li><a href="webpage6.html"style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Top MSc Colleges in India</a></li>
+              <li><a href="webpage7.html" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">Top BSc Colleges in India</a></li>
+            </ul>
+          </div>
+          <div style="flex: 1; margin-right: 5%; min-width: 150px;">
+            <h3>Top Exams</h3>
+            <ul class="search" style="list-style: none; padding: 0;">
+              <li><a href="https://jeemain.nta.nic.in/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">JEE Main</a></li>
+              <li><a href="https://jeeadv.ac.in/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">JEE Advanced</a></li>
+              <li><a href="https://www.cat.com/global-selector.html" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">CAT</a></li>
+              <li><a href="https://cuet.nta.nic.in/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">CUET</a></li>
+              <!-- <li><a href="#" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">BCA</a></li> -->
+              <li><a href="https://www.snaptest.org/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">SNAP</a></li>
+              <li><a href="https://xatonline.in/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">XAT</a></li>
+              <li><a href="https://cetonline.karnataka.gov.in/kea/" style="text-decoration: none; color: #808080;" onmouseover="this.style.color='black'; this.style.textDecoration='underline';" onmouseout="this.style.color='#808080'; this.style.textDecoration='none';">KCET</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="site-footer" id="futor">
+        <div class="footer-section">
+            <h3>UPDATES</h3>
+            <ul>
+                <li><a href="result.html">RESULT</a></li>
+                <li><a href="nt2022.pdf">MOCK TEST</a></li>
+                <li><a href="nt2022.pdf">PREVIOUS YEAR PAPER</a></li>
+                <li><a href="nt2022.pdf">SAMPLE PAPERS</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>JOIN US</h3>
+            <ul>
+                <li><a href="#button1">FREE COUNSELLING</a></li>
+                <li><a href="">LOGIN</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a  href="#latest-news">NEWS</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact-info" id="con_info">
+            <h3>CONTACT US</h3>
+            <a href="https://www.facebook.com/share/18ehmbpfVf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook fa-lg" style="margin-right: 10px;"></i>@ADMISSION_SATHI</a>
+            <a href="https://www.instagram.com/admission____sathi?igsh=ZGdkeWU1NWVsMWdh" target="_blank"><i class="fab fa-instagram fa-lg" style="margin-right: 10px;"></i>@ADMISSION_SATHI</a>
+            <a href="https://wa.me/917604057878" target="_blank"><i class="fab fa-whatsapp fa-lg" style="margin-right: 10px;"></i>@ADMISSION_SATHI</a>
+
+        </div>
+    </footer>
+
+    <div class="copyright">
+        ALL COPYRIGHTS ARE RESERVED @ ADMISSION SATHI
+    </div>
+ <script src="main.js"></script>
+ <script>
+  // Check login status and toggle login/logout button
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('session_status.php')
+      .then(response => response.json())
+      .then(data => {
+        const authButton = document.querySelector('.auth-buttons a');
+        if (data.loggedIn) {
+          authButton.textContent = 'Logout';
+          authButton.href = 'logout.php';
+        } else {
+          authButton.textContent = 'Login';
+          authButton.href = 'index.php';
+        }
+      });
+  });
+</script>
+</body>
+</html>

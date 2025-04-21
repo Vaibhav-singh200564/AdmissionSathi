@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Courses and Colleges by City</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom right, #e0f2f7, #bbdefb); /* Light blue to slightly darker blue */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 40px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #2196f3; /* A nice blue */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* White with some transparency */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-container {
+            position: relative;
+        }
+
+        .course-button {
+            padding: 12px 20px;
+            background: linear-gradient(to bottom, #bbdefb, #90caf9); /* Blue gradient for buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-button:hover {
+            background: linear-gradient(to bottom, #90caf9, #64b5f6); /* Slightly lighter blue on hover */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e3f2fd; /* Light blue on hover for links */
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Explore Courses and Colleges by City</h1>
+
+    <div class="container">
+        <div class="dropdown-container">
+            <button class="course-button" onclick="toggleDropdown('ug')">Select Your State</button>
+            <div id="ug" class="dropdown-content">
+                <a href="colleges.html?city=delhi">Delhi</a>
+                <a href="colleges.html?city=mumbai">Mumbai</a>
+                <a href="colleges.html?city=chennai">Chennai</a>
+                <a href="colleges.html?city=kolkata">Kolkata</a>
+                <a href="colleges.html?city=bangalore">Bangalore</a>
+            </div>
+        </div>
+
+        <div class="dropdown-container">
+            <button class="course-button" onclick="toggleDropdown('pg')">Postgraduate (PG)</button>
+            <div id="pg" class="dropdown-content">
+                <a href="colleges.html?city=hyderabad">Hyderabad</a>
+                <a href="colleges.html?city=pune">Pune</a>
+                <a href="colleges.html?city=ahmedabad">Ahmedabad</a>
+                <a href="colleges.html?city=jaipur">Jaipur</a>
+                <a href="colleges.html?city=lucknow">Lucknow</a>
+            </div>
+        </div>
+
+        <div class="dropdown-container">
+            <button class="course-button" onclick="toggleDropdown('diploma')">Diploma</button>
+            <div id="diploma" class="dropdown-content">
+                <a href="colleges.html?city=coimbatore">Coimbatore</a>
+                <a href="colleges.html?city=kochi">Kochi</a>
+                <a href="colleges.html?city=chandigarh">Chandigarh</a>
+                <a href="colleges.html?city=indore">Indore</a>
+                <a href="colleges.html?city=bhopal">Bhopal</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById(id);
+            dropdown.classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.course-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
